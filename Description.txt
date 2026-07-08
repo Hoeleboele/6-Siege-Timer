@@ -1,0 +1,37 @@
+## Architecture
+The app should be an static web app that uses html css and javascript. 
+The architecture should be SOLID and split in multiple smaller files.
+The app should be run on an github pages website so there should be a github actions file for deployment.
+
+## Context
+The app is going to be the time tracker for rainbow 6 siege the boardgame.
+There is an attacking team (orange) and a defending team (blue)
+Every team has 5 operators.
+Every team should have the option to choose a time per operator in increments of 30 seconds with a max of 2 minutes per operator. This should be chosen for each team in 1 option. There should be no option to choose different times for each operator only per team.
+The game is 5 rounds with an option after each round to go into the overtime round which is the last round.
+At the end of the 5th or overtime round you should be able to end the game.
+At the end of each round you should be able to kill operators removing them from the team and changing the total available time per round.
+At the end of the game you should see the time each team used per round.
+During the game players should see their total time for a round counting down.
+During the game the active player should be able to pass the turn to the other team making their timer active
+The timer should start each round at the total amount of alive operators
+During the game the active player should be able to end the round
+During the game the active player should be able to pause the game and see 4 options and a confirm selection button:
+    Add 30 seconds to own timer
+    Add 30 seconds to enemy timer
+    Substract 30 seconds from own timer
+    Substract 30 seconds from enemy timer
+    Confirm selected option
+
+## Functionality
+The app should start in a menu screen that can be used to start the game.
+After starting the app should show the option to change the time per operator for both teams.
+When done with the time selection you should be able to move on to the next phase which is deployment.
+Deployment is the a different timer calculated like this:
+    Defender goes first where timer = 5 minutes for every 30seconds an operator turn lasts.
+    Attacker goes when defender is done with setup where timer = 5 minutes
+after both deployments the attacker goes first (attack goes first every round).
+when ready attacker can start the timer and start the game.
+
+## Style
+Keep the rainbow six siege theme throughout the app.

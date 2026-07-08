@@ -1,0 +1,27 @@
+:root {
+  --bg-0: #0a0e14;
+  --bg-1: #101a26;
+  --bg-2: #17273b;
+  --ink: #eff6ff;
+  --ink-soft: #b2c2d6;
+
+  --atk: #ff8a1f;
+  --atk-strong: #ff6a00;
+  --def: #30a8ff;
+  --def-strong: #0069d9;
+
+  --danger: #f0544f;
+  --warn: #ffc445;
+  --success: #35d07f;
+
+  --panel: rgba(10, 18, 28, 0.82);
+  --panel-edge: rgba(255, 255, 255, 0.12);
+  --card: rgba(14, 27, 44, 0.9);
+
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.45);
+
+  --font-display: "Orbitron", sans-serif;
+  --font-ui: "Rajdhani", sans-serif;
+}
