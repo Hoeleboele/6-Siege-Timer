@@ -8,11 +8,21 @@ import { renderRoundEndScreen } from "./screens/RoundEndScreen.js";
 import { renderGameOverScreen } from "./screens/GameOverScreen.js";
 import { ScreenManager } from "./ui/ScreenManager.js";
 import { formatTime } from "./ui/formatTime.js";
+import { WakeLockManager } from "./core/WakeLockManager.js";
 
 const root = document.getElementById("app");
 const screenManager = new ScreenManager(root);
 const controller = new GameController();
+const wakeLockManager = new WakeLockManager();
 let lastViewModel = null;
+
+function shouldKeepScreenAwake(viewModel) {
+  return (
+    viewModel.phase === PHASES.DEPLOYMENT
+    || viewModel.phase === PHASES.ROUND
+    || viewModel.phase === PHASES.ROUND_END
+  );
+}
 
 function canPatchRound(viewModel) {
   if (!lastViewModel) {
@@ -98,6 +108,8 @@ function patchDeploymentScreen(viewModel) {
 }
 
 function render(viewModel) {
+  wakeLockManager.setEnabled(shouldKeepScreenAwake(viewModel));
+
   if (canPatchRound(viewModel) && patchRoundScreen(viewModel)) {
     lastViewModel = viewModel;
     return;
